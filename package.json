@@ -1,0 +1,37 @@
+{
+  "name": "forum-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js",
+    "test": "jest --setupFiles dotenv/config -i",
+    "test:watch:change": "jest --watch --setupFiles dotenv/config -i",
+    "test:watch": "jest --watchAll --coverage --setupFiles dotenv/config -i",
+    "migrate": "node-pg-migrate",
+    "migrate:test": "node-pg-migrate -f config/database/test.json",
+    "lint:fix": "eslint --fix --ext .js ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.5",
+    "@hapi/jwt": "^2.0.1",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "instances-container": "^2.0.6",
+    "nanoid": "^3.1.23",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^27.0.6",
+    "node-pg-migrate": "^5.10.0",
+    "nodemon": "^2.0.9"
+  }
+}
